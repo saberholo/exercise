@@ -26,6 +26,7 @@ def find_largest_square(mat):
                 for k in reversed(range(limit)):
                     if mat[i+k][j+k] == 1 and mat[i, j:j+k].sum() == k and mat[i:i+k, j].sum() == k and mat[i+k, j:j+k].sum() == k and mat[i:i+k, j+k].sum() == k:
                         res = max(res, k+1)
+                        break
 
     return res
 
