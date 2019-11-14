@@ -20,18 +20,24 @@ def getdealNums(l, r):
 
 def getdealNums2(l, r):
     res = 0
-    for i in range(21):
-        for j in range(15):
+    i = 0
+    while True:
+        j = 0
+        while True:
             tmp = 3 ** i * 5 ** j
             if l <= tmp <= r:
                 res += 1
-            elif tmp >= r:
+            elif tmp > r:
                 break
+            j += 1
+        if r < 3 ** i:
+            break
+        i += 1
     return res
 
 
 l = 1
-r = 20000000
+r = 200000
 print(getdealNums2(l, r))
 print(getdealNums(l, r))
 
